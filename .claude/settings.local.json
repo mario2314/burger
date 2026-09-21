@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Process *)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost/\" -UseBasicParsing -TimeoutSec 8; Write-Output $r.StatusCode } catch { Write-Output \"ERR: $_\" })"
+    ]
+  }
+}
