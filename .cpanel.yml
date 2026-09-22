@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - /bin/mkdir -p /home/marp5433/burger-app/storage/app/public
+    - /bin/rm -f /home/marp5433/public_html/storage
+    - /bin/ln -sfn /home/marp5433/burger-app/storage/app/public /home/marp5433/public_html/storage
