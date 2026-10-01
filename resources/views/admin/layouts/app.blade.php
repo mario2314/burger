@@ -95,6 +95,7 @@
             <div class="admin-nav-section">Data Customer</div>
             <a href="{{ route('admin.reservations.index') }}" class="admin-nav-link d-block {{ request()->routeIs('admin.reservations.*') ? 'active' : '' }}"><i class="fas fa-calendar-check"></i> Reservations</a>
             <a href="{{ route('admin.contacts.index') }}" class="admin-nav-link d-block {{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}"><i class="fas fa-envelope"></i> Contact Messages</a>
+            <a href="{{ route('admin.leads.edit') }}" class="admin-nav-link d-block {{ request()->routeIs('admin.leads.*') ? 'active' : '' }}"><i class="fas fa-paper-plane"></i> Email Leads</a>
             <a href="{{ route('admin.newsletter-subscribers.index') }}" class="admin-nav-link d-block {{ request()->routeIs('admin.newsletter-subscribers.*') ? 'active' : '' }}"><i class="fas fa-paper-plane"></i> Newsletter Subs</a>
         </nav>
     </div>

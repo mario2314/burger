@@ -1,6 +1,11 @@
 ---
 deployment:
   tasks:
+    # 1. Sinkron isi public/ ke document root (tanpa --delete, jadi cgi-bin, .well-known, dan symlink storage aman)
+    - /bin/cp -Rf /home/marp5433/burger-app/public/. /home/marp5433/public_html/
+    # 2. index.php hasil copy adalah versi standar Laravel; arahkan ulang path ke burger-app
+    - /bin/sed -i "s#__DIR__\.'/\.\./#__DIR__.'/../burger-app/#g" /home/marp5433/public_html/index.php
+    # 3. Symlink storage (setelah sync, supaya tidak ketimpa)
     - /bin/mkdir -p /home/marp5433/burger-app/storage/app/public
     - /bin/rm -f /home/marp5433/public_html/storage
     - /bin/ln -sfn /home/marp5433/burger-app/storage/app/public /home/marp5433/public_html/storage

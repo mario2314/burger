@@ -36,6 +36,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('settings/create', [SiteSettingController::class, 'create'])->name('settings.create');
     Route::post('settings', [SiteSettingController::class, 'store'])->name('settings.store');
     Route::put('settings', [SiteSettingController::class, 'update'])->name('settings.update');
+    Route::get('leads', [\App\Http\Controllers\Admin\LeadSettingController::class, 'edit'])->name('leads.edit');
+    Route::put('leads', [\App\Http\Controllers\Admin\LeadSettingController::class, 'update'])->name('leads.update');
+    Route::post('leads/test', [\App\Http\Controllers\Admin\LeadSettingController::class, 'test'])->name('leads.test');
     Route::delete('settings/{setting}', [SiteSettingController::class, 'destroy'])->name('settings.destroy');
 
     // Jam & Timeline

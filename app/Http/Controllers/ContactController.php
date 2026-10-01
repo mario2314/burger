@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\SiteSetting;
 use App\Models\ContactSubject;
+use App\Services\LeadNotifier;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -36,7 +37,8 @@ class ContactController extends Controller
             'is_read' => false,
         ];
 
-        Contact::create($sanitized);
+        $contact = Contact::create($sanitized);
+        (new LeadNotifier)->send($contact);
 
         return redirect()->route('contact.index')->with('contact_success', true);
     }
