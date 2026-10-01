@@ -14,7 +14,7 @@
 
     <style>
         body { font-family: 'Poppins', sans-serif; background: var(--light); overflow-x: hidden; }
-        .admin-sidebar { width: 270px; min-height: 100vh; background: var(--dark); position: fixed; top: 0; left: 0; overflow-y: auto; z-index: 1040; }
+        .admin-sidebar { width: 270px; height: 100vh; height: 100dvh; background: var(--dark); position: fixed; top: 0; left: 0; overflow-y: auto; z-index: 1040; }
         .admin-sidebar::-webkit-scrollbar { width: 4px; }
         .admin-sidebar::-webkit-scrollbar-thumb { background: var(--primary); }
         .admin-brand { padding: 22px 24px; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; gap: 10px; }
